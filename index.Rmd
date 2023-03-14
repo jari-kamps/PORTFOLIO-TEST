@@ -1,0 +1,25 @@
+---
+title: "Storyboard Jari Kamps"
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+---
+
+Analysis {.storyboard}
+=========================================
+
+### Frame 1
+
+```{r}
+```
+
+### Frame 2
+
+```{r}
+```
+
+Details
+=========================================
+
+Column
+-----------------------------------------
