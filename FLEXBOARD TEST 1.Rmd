@@ -1,9 +1,12 @@
 ---
-title: "Storyboard"
+title: "Storyboard Jari Kamps"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
 ---
+
+Analysis {.storyboard}
+=========================================
 
 ### Frame 1
 
@@ -15,7 +18,8 @@ output:
 ```{r}
 ```
 
-### Frame 3
+Details
+=========================================
 
-```{r}
-```
+Column
+-----------------------------------------
