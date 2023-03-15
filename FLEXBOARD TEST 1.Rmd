@@ -14,7 +14,7 @@ Introduction {.storyboard}
 ```
 
 ### Frame 2
-Hier kan je je tekst zetten
+Hier kan je je tekst zetten.
 
 ```{r}
 ```
