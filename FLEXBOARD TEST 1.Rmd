@@ -18,8 +18,18 @@ Introduction {.storyboard}
 ```{r}
 ```
 
-Details
+Graphs {.storyboard}
 =========================================
+
+### Frame 3
+
+```{r}
+```
+
+### Frame 4
+
+```{r}
+```
 
 Column
 -----------------------------------------
