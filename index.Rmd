@@ -5,6 +5,26 @@ output:
     storyboard: true
 ---
 
+Homework Week 11 {.storyboard}
+=========================================
+
+### Tempograms
+
+```{r}
+```
+
+### Mileage
+Hier kan je je tekst zetten.
+
+```{r}
+```
+
+### Middle
+Hier kan je je tekst zetten.
+
+```{r}
+```
+
 Introduction {.storyboard}
 =========================================
 
