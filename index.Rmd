@@ -9,18 +9,17 @@ Homework Week 11 {.storyboard}
 =========================================
 
 ### Tempograms
+For this weeks homework I made two tempograms based on two outliers from the corpus. I compared the tracks with the highest and lowest bpm and made both tempograms. The track from the corpus with the lowest bpm is Mileage with a 61.778 bpm, the highest is Middle with 199.928 bpm. PS I have some major technical difficulties with the loading and knitting of my tempograms. 
 
 ```{r}
 ```
 
 ### Mileage
-Hier kan je je tekst zetten.
 
 ```{r}
 ```
 
 ### Middle
-Hier kan je je tekst zetten.
 
 ```{r}
 ```
