@@ -23,19 +23,64 @@ For the homework assignment of week 7, I chose to create several ggplots, since 
 ```{r}
 ```
 
-### VIZUALISATION TRACK POPULARITY
+### VISUALISATION TRACK POPULARITY
 
 ```{r}
+library(tufte)
+library(spotifyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+sevn <- get_playlist_audio_features("", "36UKFGHMewsc9n8KIspNrB")
+
+ggplot(sevn, aes(y = track.popularity, x = as.Date(track.album.release_date))) +
+  geom_point() +
+  geom_smooth() +
+  xlim(as.Date("2016-01-15"), as.Date("2022-12-09")) +
+  labs(x = "Release Date", y = "Track Popularity", title = "TRACK POPULARITY LEVEL") +
+  theme_light()
+
 ```
 
-### VIZUALISATION ENERGY
+### VISUALISATION ENERGY
 
 ```{r}
+library(tufte)
+library(spotifyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+sevn <- get_playlist_audio_features("", "36UKFGHMewsc9n8KIspNrB")
+
+ggplot(sevn, aes(y = energy, x = as.Date(track.album.release_date))) +
+  geom_point() +
+  geom_smooth() +
+  xlim(as.Date("2016-01-15"), as.Date("2022-12-09")) +
+  labs(x = "Release Date", y = "Energy", title = "ENERGY LEVEL") +
+  theme_light()
+
 ```
 
-### VIZUALISATION DANCEABILITY
+### VISUALISATION DANCEABILITY
 
 ```{r}
+library(tufte)
+library(spotifyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+sevn <- get_playlist_audio_features("", "36UKFGHMewsc9n8KIspNrB")
+
+ggplot(sevn, aes(y = danceability, x = as.Date(track.album.release_date))) +
+  geom_point() +
+  geom_smooth() +
+  xlim(as.Date("2016-01-15"), as.Date("2022-12-09")) +
+  labs(x = "Release Date", y = "Danceability", title = "DANCEABILITY LEVEL") +
+  theme_light()
+
 ```
 
 Homework Week 12 {.storyboard}
