@@ -1,9 +1,18 @@
 ---
-title: "Storyboard Jari Kamps"
+title: "The commercial success of solo albums by Sevn Alias. Made by Jari Kamps"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
 ---
+
+Introduction {.storyboard}
+=========================================
+
+### INTRODUCTION TO THE CORPUS
+First of all, a brief description of my corpus to start with an introduction to my portfolio of computational musicology. I chose for one of the biggest Dutch Hip Hop artists of the past decade, Sevn Alias, as the main focus of my corpus, with the possible related questions: ‘’Which Sevn Alias albums were the most commercially successful and does this commercial success correspond in any way to the label where the artist was at the time signed at?’’. I chose this corpus of all his solo-albums because Sevn Alias was one of the artists who started popping up at the beginning of the rise of the influence of hip hop in the Dutch music scene, and he is considered to be one of the biggest and most influential. The main interesting part of it is, in my opinion, the fact that he released over 10 albums in the past decade, all with major success and under different labels in each of the release periods. The natural groups and points of comparison in the corpus are mainly focussed on the artist Sevn Alias his solo albums, the music labels who distributed the albums and the amounts of streams of each track from every album. I think these groups are most relatable on the point that it is the same artist on every track and differ the most on the producers behind the tracks and possible featuring’s on the tracks. Although, these can also be the main points that I’m still a bit uncertain about, because they also have an influence on the outcome of each track and therefore, the possible commercial success. I created my own Spotify-playlist with all available tracks from every solo-album of Sevn Alias available on solely Spotify. The following link leads to the public playlist I created: https://open.spotify.com/playlist/36UKFGHMewsc9n8KIspNrB?si=bdfe0cdf208347fb
+
+```{r}
+```
 
 Homework Week 12 {.storyboard}
 =========================================
@@ -152,20 +161,6 @@ Middle |>
   theme_minimal() +
   labs(x = "Time (s)", y = "Novelty")
 
-```
-
-Introduction {.storyboard}
-=========================================
-
-### Introduction to corpus
-
-```{r}
-```
-
-### Frame 2
-Hier kan je je tekst zetten.
-
-```{r}
 ```
 
 Graphs {.storyboard}
