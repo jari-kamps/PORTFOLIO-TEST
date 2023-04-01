@@ -154,6 +154,215 @@ centen |>
 
 ```
 
+Timbre outlier {.storyboard}
+=========================================
+
+### TIMBRE OUTLIER
+Als we een vergelijking maken in instrumentalness en klank kleur (timbre) zien we dat Ik Trap van het album OAKINN een outlier is met de meeste. de tweede meeste is Klim van het album SIRIUS, wat op zich ook een grote outlier vormt. beiden ongeveer evenveel danceability van gemiddeld 0.8, maar verschil in energy - ik trap met 0.7 en klim met 0.4. heeft bijdrage aan de klankkeur daarom timbre cepstogram en self-similarity op beide twee.
+
+```{r}
+```
+
+### VISUALISATION INSTRUMENTALNESS
+
+```{r}
+library(tufte)
+library(spotifyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+sevn <- get_playlist_audio_features("", "36UKFGHMewsc9n8KIspNrB")
+
+ggplot(sevn, aes(y = instrumentalness, x = as.Date(track.album.release_date))) +
+  geom_point() +
+  geom_smooth() +
+  xlim(as.Date("2016-01-15"), as.Date("2022-12-09")) +
+  labs(x = "Release Date", y = "Instrumentalness", title = "INSTRUMENTALNESS LEVEL") +
+  theme_light()
+
+```
+
+### VISUALISATION IK TRAP CEPSTOGRAM
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+iktrap <-
+  get_tidy_audio_analysis("0unMc21fkiIASp7FjgWJ9Z") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+iktrap |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+```
+
+### VISUALISATION IK TRAP SELF-SIMILARITY MATRIX
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+iktrap <-
+  get_tidy_audio_analysis("0unMc21fkiIASp7FjgWJ9Z") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+iktrap |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+
+```
+
+### VISUALISATION KLIM CEPSTOGRAM
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+klim <-
+  get_tidy_audio_analysis("5WZTHLjL4kz8rdBJzGtVpP") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+klim |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+```
+
+### VISUALISATION KLIM SELF-SIMILARITY MATRIX
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+klim <-
+  get_tidy_audio_analysis("5WZTHLjL4kz8rdBJzGtVpP") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+klim |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+
+```
+
 Homework Week 11 {.storyboard}
 =========================================
 
