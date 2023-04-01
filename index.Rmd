@@ -83,6 +83,134 @@ ggplot(sevn, aes(y = danceability, x = as.Date(track.album.release_date))) +
 
 ```
 
+Noticeable outlier {.storyboard}
+=========================================
+
+### NOTICEABLE OUTLIERS
+Layhoun, enige in E Major, extreem lage track popularity van 15. Centen, enige in B major, extreem lage track popularity van 14. beide van het album TwentyFourSevn 3.
+
+```{r}
+```
+
+### VISUALISATION CHROMAGRAM LAYHOUN
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+layhoun <-
+  get_tidy_audio_analysis("74ebZ2HIgo4NmTy9HMe0oN") |>
+  select(segments) |>
+  unnest(segments) |>
+  select(start, duration, pitches)
+
+layhoun |>
+  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) |>
+  compmus_gather_chroma() |> 
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = pitch_class,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  theme_minimal() +
+  scale_fill_viridis_c()
+
+```
+
+### VISUALISATION CHROMAGRAM CENTEN
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+centen <-
+  get_tidy_audio_analysis("6cc3CUymJMeVrPUPsRjVad") |>
+  select(segments) |>
+  unnest(segments) |>
+  select(start, duration, pitches)
+
+centen |>
+  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) |>
+  compmus_gather_chroma() |> 
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = pitch_class,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  theme_minimal() +
+  scale_fill_viridis_c()
+
+```
+
+Homework Week 11 {.storyboard}
+=========================================
+
+### Tempograms
+For this weeks homework I made two tempograms based on two outliers from the corpus. I compared the tracks with the highest and lowest bpm and made both tempograms. The track from the corpus with the lowest bpm is Mileage with a 61.778 bpm, the highest is Middle with 199.928 bpm. PS I have some major technical difficulties with the loading and knitting of my tempograms. 
+
+```{r}
+```
+
+### Mileage
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+Mileage <-
+  get_tidy_audio_analysis("4tOoKxtiLr1qH2AHUI5KqU") |>
+  select(segments) |>
+  unnest(segments)
+
+Mileage |>
+  mutate(loudness_max_time = start + loudness_max_time) |>
+  arrange(loudness_max_time) |>
+  mutate(delta_loudness = loudness_max - lag(loudness_max)) |>
+  ggplot(aes(x = loudness_max_time, y = pmax(0, delta_loudness))) +
+  geom_line() +
+  xlim(0, 30) +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "Novelty")
+
+```
+
+### Middle
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+Middle <-
+  get_tidy_audio_analysis("0JFkkqgv6r2SpbEAj7q5rt") |>
+  select(segments) |>
+  unnest(segments)
+
+Middle |>
+  mutate(loudness_max_time = start + loudness_max_time) |>
+  arrange(loudness_max_time) |>
+  mutate(delta_loudness = loudness_max - lag(loudness_max)) |>
+  ggplot(aes(x = loudness_max_time, y = pmax(0, delta_loudness))) +
+  geom_line() +
+  xlim(0, 30) +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "Novelty")
+
+```
+
 Homework Week 12 {.storyboard}
 =========================================
 
@@ -172,63 +300,6 @@ sevnalbums_dist |>
   hclust(method = "single") |> # Try single, average, and complete.
   dendro_data() |>
   ggdendrogram()
-
-```
-
-Homework Week 11 {.storyboard}
-=========================================
-
-### Tempograms
-For this weeks homework I made two tempograms based on two outliers from the corpus. I compared the tracks with the highest and lowest bpm and made both tempograms. The track from the corpus with the lowest bpm is Mileage with a 61.778 bpm, the highest is Middle with 199.928 bpm. PS I have some major technical difficulties with the loading and knitting of my tempograms. 
-
-```{r}
-```
-
-### Mileage
-
-```{r}
-library(tidyverse)
-library(spotifyr)
-library(compmus)
-
-Mileage <-
-  get_tidy_audio_analysis("4tOoKxtiLr1qH2AHUI5KqU") |>
-  select(segments) |>
-  unnest(segments)
-
-Mileage |>
-  mutate(loudness_max_time = start + loudness_max_time) |>
-  arrange(loudness_max_time) |>
-  mutate(delta_loudness = loudness_max - lag(loudness_max)) |>
-  ggplot(aes(x = loudness_max_time, y = pmax(0, delta_loudness))) +
-  geom_line() +
-  xlim(0, 30) +
-  theme_minimal() +
-  labs(x = "Time (s)", y = "Novelty")
-
-```
-
-### Middle
-
-```{r}
-library(tidyverse)
-library(spotifyr)
-library(compmus)
-
-Middle <-
-  get_tidy_audio_analysis("0JFkkqgv6r2SpbEAj7q5rt") |>
-  select(segments) |>
-  unnest(segments)
-
-Middle |>
-  mutate(loudness_max_time = start + loudness_max_time) |>
-  arrange(loudness_max_time) |>
-  mutate(delta_loudness = loudness_max - lag(loudness_max)) |>
-  ggplot(aes(x = loudness_max_time, y = pmax(0, delta_loudness))) +
-  geom_line() +
-  xlim(0, 30) +
-  theme_minimal() +
-  labs(x = "Time (s)", y = "Novelty")
 
 ```
 
