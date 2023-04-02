@@ -119,11 +119,15 @@ ggplot(sevn, aes(y = danceability, x = as.Date(track.album.release_date))) +
 
 ```
 
-Noticeable outlier {.storyboard}
+Noticeable outliers {.storyboard}
 =========================================
 
 ### NOTICEABLE OUTLIERS
-Layhoun, enige in E Major, extreem lage track popularity van 15. Centen, enige in B major, extreem lage track popularity van 14. beide van het album TwentyFourSevn 3.
+Looking forward to making a chromagram visualisation on some ‘outlier’ in the corpus i chose to look at an outlier based on the key of the tracks and the correlating track popularity feature. What struck me when I looked at the data was that in this case there were two main tracks as outliers in the entire corpus. The track ‘Layhoun’ and the track ‘Centen’, both from the album ‘Twenty Four Sevn 3’ are the only two tracks with a specific key that no other track in the entire corpus has. The track ‘Layhoun’ is the only track in the key E major and the track ‘Centen’ is the only track in the key B major. Interesting since almost all tracks in the corpus are based on a minor key in general. Another interesting fact is that both of the tracks in relation to this have a very low track popularity level of just 15 for ‘Layhoun’ and 14 for ‘Centen’ while the rest of the tracks from the same album all have a relative high track popularity.
+
+In the first visualisation is a chromagram of the track ‘Layhoun’ visible. One thing that is really remarkeable is that the chromagram shows a consistent ‘half’ magnitude for the scale of E major, but shows a lot of peak magnitudes for the G#/Ab key. When I re-heard the song myself, I came to the conclusion that the track contains a lot of dissonance and intonation features in the main melody, also in relation to the change of octaves. This may cause the peaks of magnitudes in keys which are not directly related to the main scale of the track itself. 
+
+On the other hand, shows the chromagram of the track ‘Centen’ a very clear magnitude on the scale of the track B major. When I re-heard this track, I remarked that the track sounds quite monotonous throughout the entire track so in the end it makes sense.
 
 ```{r}
 ```
