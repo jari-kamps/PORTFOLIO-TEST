@@ -13,7 +13,7 @@ First of all, a description of my corpus to start with my portfolio for computat
 The natural groups and points of comparison in the corpus are mainly focussed on the artist Sevn Alias his solo albums, the music labels who distributed the albums and the amounts of streams of each track from every album. I think these groups are most relatable on the point that it is the same artist on every track and differ the most on the producers behind the tracks and possible featurings on the tracks. Although, these can also be the main points that I’m still a bit uncertain about, because they also have an influence on the outcome of each track and therefore, the possible commercial success. 
 I created my own Spotify-playlist with all available tracks from every solo-album of Sevn Alias available on solely Spotify. The following link leads to the public playlist I created: https://open.spotify.com/playlist/36UKFGHMewsc9n8KIspNrB?si=bdfe0cdf208347fb
 
-In relation to the structure of the corpus, there are a couple of sidenotes i have to adress. First of all, his very first solo album 'TwentyFourSevn' is not available on Spotify, so this won't be applicable in the research. Secondly, the track called 'Intro' from the album 'Trap Grammy' is also not applicable, since it gave an error rendering some of the graphs related to the corpus since there is one more track with exactly the same track name.
+In relation to the structure of the corpus, there are a couple of sidenotes i have to adress. First of all, his very first solo album 'TwentyFourSevn' is not available on Spotify, so this won't be applicable in the research. Secondly, the track called 'Intro' from the album 'Trap Grammy' is also not applicable, since it gave an error rendering some of the graphs related to the corpus since there is one more track with exactly the same track name. Thirdly, I had some issues with the coding of making my graphs and grams 'interactual', so it could be that these functions don't work unfortunately.
 
 Last of all, a quick overview of the albums and the labels who distributed them, in order of release date (2016 - 2022).
 
@@ -835,16 +835,16 @@ Middle |>
 
 ```
 
-Homework Week 12 {.storyboard}
+Internal relations {.storyboard}
 =========================================
 
-### Corpus
-For this weeks homework I made a dendogram based on all the individual tracks from the corpus to see how the tracks from all the different albums relate to each other. 
+### INTERNAL RELATIONS
+I made a 'bigger structure' dendogram based on all the individual tracks from the corpus to see how the tracks from all the different albums relate to each other. What strikes me at first when I look at the main structure and lines of the dendogram is that I see a clear distinction in classification between the different albums. There is a clear division per album visible. From this you could conclude that each album surrounds itself with songs within a specific genre of music and producers who produce that specific genre of music. This could also relate to the sound that is 'trending' at the moment an album is released. Maybe the producers produced the underlying music within this specific trend which creates a great similarity in sound of all the tracks combined in the specific album.
 
 ```{r}
 ```
 
-### Dendogram
+### DENDOGRAM OF THE ENTIRE CORPUS
 
 ```{r}
 library(tidyverse)
@@ -931,6 +931,11 @@ Conclusion {.storyboard}
 =========================================
 
 ### CONCLUSION OF MY RESEARCH
+After my research, I think I can formulate a concrete, short-tempered conclusion to the main research question: ‘’Which Sevn Alias albums were the most commercially successful and does this commercial success correspond in any way to the label where the artist was at the time signed at?’’
+
+After my entire analysation, I think the most recent album is at the moment the most popular due to its recent release date, but I think that the older albums can be seen as equally as popular and with the most commercial success. I think the people see Sevn Alias as a style icon for the modern day Dutch Hip Hop and that hey have a lot more compassion for the older albums where these people 'grew up with' through the evolution of the genre in Holland. I think people contemplate these albums as pure 'classics' which will never die out. 
+
+In relation to this, I think the label Rotterdam Airlines mainly focussed on more commercial tracks with a higher danceability, which in these time periods did result to the biggest hits from Sevn Alias, but the later labels like 1OAK Entertainment, even under venture of Top Notch, did evolve him to making less 'commercial' tracks, but did stimulate popularity for bringing him back to the basics. Something I think his fans appreciate the most.
 
 ```{r}
 ```
