@@ -417,12 +417,18 @@ Track-level summaries {.storyboard}
 =========================================
 
 ### TRACK-LEVEL SUMMARIES
-Ten eerste chordograms van de nummers Mileage van album Six Summers met hoogste valence van 0.962 en Stappen van album TwentyFourSevn 2 met laagste valence van 0.123. opmerkelijke verschillen vergelijken . ten slot visualisaties tussen meest en minst populaire albums op basis van gemiddelde track popularity de meest recente albums, ... en ... op basis van tempo, duration, loudness en visualisatie van timbre coefficients.
+Incorporating more track-level summaries into the research led me to creating several chordograms of two outliers in the corpus, a graph based on tempo, loudness and duration and a graph based on timbre coefficients for the two most recent albums in the corpus. 
+
+First of all, a look at the keygrams. I chose to pick two outliers from the corpus based on the highest and lowest valence level, due to the relation to pitch and key. The track ‘Mileage’ from the album Six Summers has the highest valence level of 0.962 and the track ‘Stappen’ from the album Twenty Four Sevn 2 has the lowest valence level of 0.123. When we take a look at the keygram of ‘Mileage’ we see that the key throughout the entire piece is mainly based on the B minor key, even though the first 10 songs are indicated in the Ab major key, which indicates that there might be a certain intro with a modulation after it from major to minor.  This is since the ‘happiness’ is supposed to be really high, but the minor key suggests a sad feeling from the track. The keygram of the track ‘Stappen’ shows a clear distinction between the major and minor scale, where minor has a clear dominance. 
+
+The visualisation based on tempo, loudness and duration is based on the average most popular albums from the track popularity graph we discussed earlier. This is the case for the two most recent albums ‘The Last Flowbender’ and ‘Six Summers’. The graph indicates that most of the tracks from The Last Flowbender are based on a higher BPM than the tracks from Six Summers. The duration of the tracks are more or less overall the same, but the loudness of the tracks differs significantly. The average loudness of the tracks from the Six Summers album is significantly than the tracks from The Last Flowbender album. This can correlate to the fact that the popularity of track from the Six Summers album is much more pulled together than the wider spread from The Last Flowbender album. 
+
+The timbre coefficient graph shows that both albums are quite similar based on timbre. Even though not every ‘bulb’ is stretched with the same length, they show similarity in the way the stand next to each other and follow ‘the same route’ through the graph.
 
 ```{r}
 ```
 
-### VISUALISATION MILEAGE CHORDOGRAM
+### VISUALISATION MILEAGE KEYGRAM
 
 ```{r}
 library(tidyverse)
@@ -544,7 +550,7 @@ mileage |>
 
 ```
 
-### VISUALISATION STAPPEN CHORDOGRAM
+### VISUALISATION STAPPEN KEYGRAM
 
 ```{r}
 library(tidyverse)
