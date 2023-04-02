@@ -16,18 +16,30 @@ I created my own Spotify-playlist with all available tracks from every solo-albu
 In relation to the structure of the corpus, there are a couple of sidenotes i have to adress. First of all, his very first solo album 'TwentyFourSevn' is not available on Spotify, so this won't be applicable in the research. Secondly, the track called 'Intro' from the album 'Trap Grammy' is also not applicable, since it gave an error rendering some of the graphs related to the corpus since there is one more track with exactly the same track name.
 
 Last of all, a quick overview of the albums and the labels who distributed them, in order of release date (2016 - 2022).
+
 Twenty Four Sevn 2 - Rotterdam Airlines
+
 Twenty Four Sevn 3 - Rotterdam Airlines, Cloud 9
+
 Trap Grammy - Rotterdam Airlines, Sony Music
+
 Picasso - Rotterdam Airlines
+
 OAKINN - 1OAK Entertainment
+
 Recasso - 1OAK Entertainment 
-SIRIUs - 1OAK Entertainment 
+
+SIRIUS - 1OAK Entertainment 
+
 Twenty Four Sevn 4 - 1OAK Entertainment 
+
 Bogey 4 the Win - 1OAK Entertainment 
+
 Six Summers - 1OAK Entertainment 
+
 The Last Flowbender - 1OAK Entertainment 
-'at the least half of the '1OAK Entertainment' releases in joint venture with Top Notch Music, Universal and the most recent half fully independent as his own label'
+
+'At the least half of the '1OAK Entertainment' releases in joint venture with Top Notch Music, Universal and the most recent half fully independent as his own label'
 
 ```{r}
 ```
@@ -36,7 +48,13 @@ First impressions {.storyboard}
 =========================================
 
 ### FIRST IMPRESSIONS
-For the homework assignment of week 7, I chose to create several ggplots, since I think that three track 'features' are the support for my topic. In this case the danceability, energy and track popularity API features. I think the track features danceability and energy could play an important factor in terms of commercial success, because I think these factors are important for things like the extent to which it is played in public spheres. A higher danceability and energy level could perhaps support the definition of commercial success per album. The track popularity (number between 0 and 100) represents the overall popularity of the song by album, with a number closer to 100 being Sevn Alias most popular song. As a result, I find it interesting that energy and danceability are somewhat different in comparison, especially in the releases between 2018 and 2019, where a higher degree of danceability relates to a lower energy. It is also interesting that the general track popularity of the songs has a relatively general point per album, despite huge hits, 'outliers', in for example the year 2018. Around 2021, the album has a broader spread in terms of general popularity. I found these aspects interesting.
+For my first Spotify API impressions of the corpus, I chose to create several ggplots, since I think that three track features are the support for my topic. In this case the danceability, energy and track popularity API features. I think the track features danceability and energy could play an important factor in terms of commercial success, because I think these factors are important for things like the extent to which it is played in public spheres. A higher danceability and energy level could perhaps support the definition of commercial success per album. The track popularity (number between 0 and 100) represents the overall popularity of the song by album, with a number closer to 100 being Sevn Alias most popular song. 
+
+By first impression, we can see that the album 'Trap Grammy' is one of the least popular albums and the most recent album 'The Last Flowbender' is one of the most popular. If we relate this to both albums general danceability and energy level, we see some interesting aspects. The overal energy and danceability levels of both albums seems to be at the same level, but the album 'Trap Grammy' has a wider spread of tracks with some higher energy and danceabilty. This seems to be relateable that the listeners of Sevn Alias' music relate the track popularity more to tracks with less danceability. Maybe they relate more to a specific style of Rap in the music, than music with high energy and they can dance to.
+
+if we relate the track popularity gram to the albums of the corpus based on streams, we see that it has little relation to the amount of streams an album has to this point in time. For example the album 'Picasso' has songs with over 56 million streams and a minimum of 2.5, but the latest album 'The Last Flowbender' a track over 1.4 and a minimun of 198.000. Eventhough it shows in the gram that the median track populariy is a lot higher in the latest solo album.
+
+I also find it interesting that the energy and danceability levels are somewhat different in comparison, especially in the releases between 2018 and 2019, where a higher degree of danceability corelates to a lower energy. It is also interesting that the general track popularity of the songs has a relatively general point per album, despite huge hits, 'outliers', in for example the year 2018. Around 2021, the album has a broader spread in terms of general popularity. I mainly found these aspects interesting.
 
 ```{r}
 ```
