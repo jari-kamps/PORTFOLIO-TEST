@@ -776,16 +776,18 @@ allalbums |>
 
 ```
 
-Homework Week 11 {.storyboard}
+Tempo and loudness novelty {.storyboard}
 =========================================
 
-### Tempograms
-For this weeks homework I made two tempograms based on two outliers from the corpus. I compared the tracks with the highest and lowest bpm and made both tempograms. The track from the corpus with the lowest bpm is Mileage with a 61.778 bpm, the highest is Middle with 199.928 bpm. PS I have some major technical difficulties with the loading and knitting of my tempograms. 
+### TEMPO AND LOUDNESS NOVELTY
+I discussed with my TA Dave Baker that my grams/graphs in relation to 'Tempo' are not able to render on my laptop and we couldn't figure out a solution. This has been communicated if I'm not mistaking. Nevertheless, I made two novelty functions based on two tracks from the corpus. I compared the tracks with the highest and lowest BPM and made both novelty functions. The track from the corpus with the lowest BPM is 'Mileage' from the album Six Summers with a 61.778 bpm, the highest is 'Middle' from the album SIRIUS with 199.928 bpm. 
+
+The novelty funtion for 'Mileage' shows a continuous proportional distribution of peaks based on the 'energy-based novelty function based on Spotify’s loudness estimates'. In comparison to the function for the track 'Middle' we see that it contains a proportional distribution at the beginning but seems to half the distance of the peaks in a later section.This suggest that the track is around 200 BPM but is 'interpreted' in a BPM of 100 at the beginning which transforms in a interpretation in of the 200 BPM in the later section. 
 
 ```{r}
 ```
 
-### Mileage
+### NOVELTY FUNCTION MILEAGE
 
 ```{r}
 library(tidyverse)
@@ -809,7 +811,7 @@ Mileage |>
 
 ```
 
-### Middle
+### NOVELTY FUNCTION MIDDLE
 
 ```{r}
 library(tidyverse)
