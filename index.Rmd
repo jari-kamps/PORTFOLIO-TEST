@@ -194,11 +194,21 @@ centen |>
 
 ```
 
-Timbre outlier {.storyboard}
+Timbre outliers {.storyboard}
 =========================================
 
-### TIMBRE OUTLIER
-Als we een vergelijking maken in instrumentalness en klank kleur (timbre) zien we dat Ik Trap van het album OAKINN een outlier is met de meeste. de tweede meeste is Klim van het album SIRIUS, wat op zich ook een grote outlier vormt. beiden ongeveer evenveel danceability van gemiddeld 0.8, maar verschil in energy - ik trap met 0.7 en klim met 0.4. heeft bijdrage aan de klankkeur daarom timbre cepstogram en self-similarity op beide twee.
+### TIMBRE OUTLIERS
+When had a look on working on the ‘timbre’ feature, I decided to base the research on outliers from the corpus based on contribution to this timbre. To me this came down to, among other things, a distinction in the ‘Instrumentalness’ feature. First of all, I made a visualisation to identify what the outliers are applicable for the timbre research. From the graph can be seen that there are clearly two outliers. In this case the track ‘Ik Trap’ from the album OAKINN with the most instrumentalness and secondly the track ‘Klim’ from the album SIRIUS. Based on further data, both tracks have an average danceability of around 0.8, but have a major difference in energy level. ‘Ik Trap’ contains a level of 0.7 and ‘Klim’ a level of 0.4.
+
+Visualisations for ‘Ik Trap’
+
+From the ‘Ik Trap’ cepstogram visualisation is mainly visible that the track plays mainly between the C2 and C5 range of pitch. The magnitude peaks are through the time of the piece mainly focussed on the C4 range in the beginning, but transforms and evaluates more to the range of C5 in the later parts. Interesting about this gram is that in the beginning the C0 plays very little to no role at all, but comes up at around 20 seconds in the pieces. The self-similarity matrix on the other hand confirms that the track makes use of a lot of same-sounding components and repetition from this 20 second point with the dark parallel line and darker boxing. 
+
+Visualisations for ‘Klim’
+
+From the ‘Klim’ cepstogram visualisation is mainly visible that the track plays mainly between the C2 and C4 range of pitch. Interesting is that the piece stays constant between this range through almost the entire piece, with some major peaks of magnitude in the C2 range at around 140 seconds. This consistency also relates to the self-similarity matrix, where its almost dark in all the piece, except for a major break at this 140 second mark, where it is not similar at all. 
+
+When we relate the cepstograms of the two tracks to each other, we see that ‘Ik Trap’ has more flexibility of pitch range throughout the track than ‘Klim’, even though ‘Klim’ is a more consistent piece. When we relate the self-similarity matrices to each other we can conclude around the same things. 
 
 ```{r}
 ```
