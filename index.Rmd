@@ -9,7 +9,25 @@ Introduction {.storyboard}
 =========================================
 
 ### INTRODUCTION TO THE CORPUS
-AANGEVEN 1E ALBUM NIET OP SPOTIFY, NUMMER INTRO GESKIPT VANWEGE ERROR. First of all, a brief description of my corpus to start with an introduction to my portfolio of computational musicology. I chose for one of the biggest Dutch Hip Hop artists of the past decade, Sevn Alias, as the main focus of my corpus, with the possible related questions: ‘’Which Sevn Alias albums were the most commercially successful and does this commercial success correspond in any way to the label where the artist was at the time signed at?’’. I chose this corpus of all his solo-albums because Sevn Alias was one of the artists who started popping up at the beginning of the rise of the influence of hip hop in the Dutch music scene, and he is considered to be one of the biggest and most influential. The main interesting part of it is, in my opinion, the fact that he released over 10 albums in the past decade, all with major success and under different labels in each of the release periods. The natural groups and points of comparison in the corpus are mainly focussed on the artist Sevn Alias his solo albums, the music labels who distributed the albums and the amounts of streams of each track from every album. I think these groups are most relatable on the point that it is the same artist on every track and differ the most on the producers behind the tracks and possible featuring’s on the tracks. Although, these can also be the main points that I’m still a bit uncertain about, because they also have an influence on the outcome of each track and therefore, the possible commercial success. I created my own Spotify-playlist with all available tracks from every solo-album of Sevn Alias available on solely Spotify. The following link leads to the public playlist I created: https://open.spotify.com/playlist/36UKFGHMewsc9n8KIspNrB?si=bdfe0cdf208347fb
+First of all, a description of my corpus to start with my portfolio for computational musicology. I chose for one of the biggest Dutch Hip Hop artists of the past decade, Sevn Alias, as the main focus of my corpus, with the related question: ‘’Which Sevn Alias albums were the most commercially successful and does this commercial success correspond in any way to the label where the artist was at the time signed at?’’. I chose this corpus of all his Spotify available solo-albums because Sevn Alias was one of the first Dutch hip hop artists who started popping up at the beginning of the rise of the influence of hip hop in the Dutch music scene, and he is considered to be one of the biggest and most influential (based on his music and the cultural influence around it). The main interesting part of it is, in my opinion, the fact that he released over 10 albums in the past decade, all with major success and most of them distributed under different labels in each of the release periods. 
+The natural groups and points of comparison in the corpus are mainly focussed on the artist Sevn Alias his solo albums, the music labels who distributed the albums and the amounts of streams of each track from every album. I think these groups are most relatable on the point that it is the same artist on every track and differ the most on the producers behind the tracks and possible featurings on the tracks. Although, these can also be the main points that I’m still a bit uncertain about, because they also have an influence on the outcome of each track and therefore, the possible commercial success. 
+I created my own Spotify-playlist with all available tracks from every solo-album of Sevn Alias available on solely Spotify. The following link leads to the public playlist I created: https://open.spotify.com/playlist/36UKFGHMewsc9n8KIspNrB?si=bdfe0cdf208347fb
+
+In relation to the structure of the corpus, there are a couple of sidenotes i have to adress. First of all, his very first solo album 'TwentyFourSevn' is not available on Spotify, so this won't be applicable in the research. Secondly, the track called 'Intro' from the album 'Trap Grammy' is also not applicable, since it gave an error rendering some of the graphs related to the corpus since there is one more track with exactly the same track name.
+
+Last of all, a quick overview of the albums and the labels who distributed them, in order of release date (2016 - 2022).
+Twenty Four Sevn 2 - Rotterdam Airlines
+Twenty Four Sevn 3 - Rotterdam Airlines, Cloud 9
+Trap Grammy - Rotterdam Airlines, Sony Music
+Picasso - Rotterdam Airlines
+OAKINN - 1OAK Entertainment
+Recasso - 1OAK Entertainment 
+SIRIUs - 1OAK Entertainment 
+Twenty Four Sevn 4 - 1OAK Entertainment 
+Bogey 4 the Win - 1OAK Entertainment 
+Six Summers - 1OAK Entertainment 
+The Last Flowbender - 1OAK Entertainment 
+'at the least half of the '1OAK Entertainment' releases in joint venture with Top Notch Music, Universal and the most recent half fully independent as his own label'
 
 ```{r}
 ```
@@ -863,7 +881,7 @@ sevnalbums_juice <-
 sevnalbums_dist <- dist(sevnalbums_juice, method = "euclidean")
 
 sevnalbums_dist |> 
-  hclust(method = "single") |> # Try single, average, and complete.
+  hclust(method = "complete") |> # Try single, average, and complete.
   dendro_data() |>
   ggdendrogram()
 
